@@ -5,6 +5,7 @@ pipeline {
         stage('Verify Branch') {
             steps {
                 echo "$GIT_BRANCH"
+                echo "$WORKSPACE"
             }
         }
         stage('Docker Build') {
