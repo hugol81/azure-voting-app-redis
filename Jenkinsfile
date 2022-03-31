@@ -11,7 +11,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 sh 'cd azure-vote/'
-                echo 'The workspace is: "$WORKSPACE"'
+                echo "$WORKSPACE"
                 sh '''docker images -a
                 docker build -t jenkins-pipeline .
                 docker images -a
