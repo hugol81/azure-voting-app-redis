@@ -10,10 +10,11 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh '''cd azure-vote/
-                'docker images -a'
-                'docker build -t jenkins-pipeline .'
-                'docker images -a'
+                sh 'cd azure-vote/'
+                echo 'The workspace is: "$WORKSPACE"'
+                sh '''docker images -a
+                docker build -t jenkins-pipeline .
+                docker images -a
                 cd ..'''
                 echo "$GIT_BRANCH"
             }
