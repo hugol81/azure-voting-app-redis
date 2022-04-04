@@ -12,9 +12,9 @@ pipeline {
             steps {
                 sh 'cd azure-vote/'
                 echo "$WORKSPACE"
-                sh '''docker images -a
-                docker build -t jenkins-pipeline .
-                docker images -a
+                sh '''sudo docker images -a
+                sudo docker build -t jenkins-pipeline .
+                sudo docker images -a
                 cd ..'''
                 echo "$GIT_BRANCH"
             }
